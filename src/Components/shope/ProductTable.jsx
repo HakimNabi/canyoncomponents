@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { Link } from 'react-router-dom';
+import '/ProductTable.css'
 
 const columns = [
   {
     field: 'Partno', headerName: 'Partno',
     width: 140,
-    
-  
+
+
   },
   { field: 'StartingPrice', headerName: 'StartingPrice', width: 50, type: 'number' },
   { field: 'Stock', headerName: 'Stock', width: 100 },
@@ -87,9 +88,9 @@ const ProductTable = () => {
             paginationModel: { page: 0, pageSize: 8 },
           },
         }}
-        pageSizeOptions={[0,5, 7, 8, 9, 10]}
-        
-      // checkboxSelection
+        pageSizeOptions={[0, 5, 7, 8, 9, 10]}
+
+      // checkboxSelectionF
       />
     </div>
   );

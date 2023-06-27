@@ -1,0 +1,28 @@
+.product-table-container {
+    height: 550px;
+    width: 87%;
+}
+
+    .product-table-headerCell {
+    background-color: #af0606;
+    }
+
+
+@media screen and (max-width: 768px) {
+    .product-table-container {
+        width: 100%;
+    }
+}
+
+.product-table-headerCell {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.product-table-row--selected {
+    background-color: var(--info-color);
+}
+
+.product-table-row:hover {
+    background-color: var(--warning-color);
+}

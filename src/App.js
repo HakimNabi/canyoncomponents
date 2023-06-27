@@ -3,13 +3,13 @@ import React from 'react';
 // import  { useState } from 'react';
 import './App.css';
 import { UserContext } from '../src/UserContext'
-import { Routes, Route} from 'react-router-dom';
-import Index from './components/Index.jsx';
-import RequestQuote from './components/REquestQutoe/RequestQuote';
-import ProductComponent from './components/ProductOverview/ProductComponent';
+import { Routes, Route } from 'react-router-dom';
+import Index from './Components/Index.jsx';
+import RequestQuote from './Components/REquestQutoe/RequestQuote';
+import ProductComponent from './Components/ProductOverview/ProductComponent';
 
 import { useState } from 'react'
-import CartPopup from './components/CartPopup/CartPopup';
+import CartPopup from './Components/CartPopup/CartPopup.jsx';
 // import CheckPrice from './components/CheckPrice/CheckPrice';
 
 function App() {
@@ -20,14 +20,14 @@ function App() {
 
   const [isCartopen, setisCartopen] = useState(false)
   return (
-    <UserContext.Provider value={{sideMenuBar,isCartopen,setisCartopen, setsideMenuBar, sideMenuBarDropDown, setsideMenuBarDropDown, sideMenuBarDropDownIndex, setsideMenuBarDropDownIndex}} >
-     <Routes>
-      <Route path='/' element={<Index/>}/>
-      {/* <Route path='/' element={<CheckPrice/>}/> */}
-      <Route path='/request-quote' element={<RequestQuote/>}/>
-      <Route path='/add-to-cart' element={<CartPopup/>}/>
-      <Route path='/product' element={<ProductComponent/>}/>
-     </Routes>
+    <UserContext.Provider value={{ sideMenuBar, isCartopen, setisCartopen, setsideMenuBar, sideMenuBarDropDown, setsideMenuBarDropDown, sideMenuBarDropDownIndex, setsideMenuBarDropDownIndex }} >
+      <Routes>
+        <Route path='/' element={<Index />} />
+        {/* <Route path='/' element={<CheckPrice/>}/> */}
+        <Route path='/request-quote' element={<RequestQuote />} />
+        <Route path='/add-to-cart' element={<CartPopup />} />
+        <Route path='/product' element={<ProductComponent />} />
+      </Routes>
     </UserContext.Provider>
   )
 }

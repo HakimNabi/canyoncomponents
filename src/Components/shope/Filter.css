@@ -1,0 +1,14 @@
+/* Filter.css */
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .filter {
+        align-items: flex-start;
+        /* Adjust alignment for smaller screens */
+    }
+}

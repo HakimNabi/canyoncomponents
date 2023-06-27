@@ -1,0 +1,29 @@
+.table-container {
+    max-height: 540px;
+    overflow: auto;
+}
+
+.table-cell {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .table-cell {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .table-container {
+        max-height: none;
+    }
+}
+
+/* Red and Yellow Coloring Scheme */
+.table-cell-red {
+    color: red;
+}
+
+.table-cell-yellow {
+    color: yellow;
+}

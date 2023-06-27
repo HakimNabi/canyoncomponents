@@ -10,7 +10,7 @@ const Shope = () => {
       <div className="row">
         <div>
           <Sleft />
-          
+
         </div>
         <div >
           <Sright />
