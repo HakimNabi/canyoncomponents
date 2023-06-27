@@ -10,6 +10,7 @@ import ProductComponent from './Components/ProductOverview/ProductComponent';
 
 import { useState } from 'react'
 import CartPopup from './Components/CartPopup/CartPopup.jsx';
+import SignUp from './Components/SignUp/signup';
 // import CheckPrice from './components/CheckPrice/CheckPrice';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/add-to-cart' element={<CartPopup />} />
         <Route path='/product' element={<ProductComponent />} />
       </Routes>
+      <SignUp />
     </UserContext.Provider>
   )
 }

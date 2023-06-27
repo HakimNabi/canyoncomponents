@@ -19,7 +19,7 @@ import logo from '../../Static/Images/logo.png'
 import MenuSharpIcon from '@mui/icons-material/MenuSharp';
 import Button from '@mui/material/Button';
 import { UserContext } from '../../UserContext';
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -62,8 +62,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function NavBar() {
 
-  const {setsideMenuBar} = useContext(UserContext)
-   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { setsideMenuBar } = useContext(UserContext)
+  const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
@@ -164,21 +164,21 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={
         {
-            'backgroundColor' : 'rgba(24, 46, 73, 1)'
+          'backgroundColor': 'rgba(24, 46, 73, 1)'
         }
       } >
         <Toolbar>
           <Link to="/">
-          
-          <img
-            src={logo}
-            component="div"
-            alt='logo'
-            sx={{ display: { xs: 'none', sm: 'block' }}}
-            style={{
-              padding: '1rem'
-            }}
-          />
+
+            <img
+              src={logo}
+              component="div"
+              alt='logo'
+              sx={{ display: { xs: 'none', sm: 'block' } }}
+              style={{
+                padding: '1rem'
+              }}
+            />
           </Link>
           <Search>
             <SearchIconWrapper>
@@ -191,17 +191,26 @@ export default function NavBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuSharpIcon style={{ fontSize: '2rem' }} onClick={()=>{
-              setsideMenuBar(true)
-            }} />
-          </IconButton>
+
+            {/* Added Signup Button. */}
+
+            <Link to="/signup">
+              <Button variant="contained" sx={{ backgroundColor: '#F4976C', fontWeight: '600' }}>Sign Up</Button>
+            </Link>
+
+
+
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+            >
+              <MenuSharpIcon style={{ fontSize: '2rem' }} onClick={() => {
+                setsideMenuBar(true)
+              }} />
+            </IconButton>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
@@ -209,7 +218,7 @@ export default function NavBar() {
             >
               <Link to="/request-quote">
 
-              <Button variant="contained" sx={{ backgroundColor: '#F4976C', fontWeight: '600' }}>Get A Quote</Button>
+                <Button variant="contained" sx={{ backgroundColor: '#F4976C', fontWeight: '600' }}>Get A Quote</Button>
               </Link>
             </IconButton>
             <IconButton
@@ -221,15 +230,15 @@ export default function NavBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle style={{ color: '#F4976C', fontSize: '2rem' }}/>
+              <AccountCircle style={{ color: '#F4976C', fontSize: '2rem' }} />
               <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, color: '#F4976C', position: 'relative', left: '0.8rem' }}
-          >
-            Log in
-          </Typography>
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ display: { xs: 'none', sm: 'block' }, color: '#F4976C', position: 'relative', left: '0.8rem' }}
+              >
+                Log in
+              </Typography>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
@@ -243,6 +252,12 @@ export default function NavBar() {
             >
               <MoreIcon />
             </IconButton>
+
+
+
+
+
+
           </Box>
         </Toolbar>
       </AppBar>

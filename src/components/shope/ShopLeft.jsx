@@ -6,6 +6,7 @@ import dimensions from '../../Static/Dimensions.jpg';
 import SliderComponent from './SliderComponent';
 import CartPopup from '../CartPopup/CartPopup';
 import { UserContext } from '../../UserContext';
+import { Drawer } from '@material-ui/core';
 
 const ShopLeft = () => {
   const { isCartopen, setisCartopen } = useContext(UserContext);
@@ -50,126 +51,128 @@ const ShopLeft = () => {
 
   return isContentVisible ? (
     <div className='main'>
-      {/* Content */
-        <div className="main ">
-          <div className='flex'>
+        {/* Content */
 
-            <h2>KEYWORD</h2>
-            <div className='hr' ></div>
-          </div>
-          <div className='keywoedSearch'>
-            <div>
-              <input type="text" placeholder='Search' className='searchinput' />
+          <div className="main ">
+            <div className='flex'>
+
+              <h2>KEYWORD</h2>
+              <div className='hr' ></div>
             </div>
-
-
-            <button className='search' onClick={() => { setisCartopen(true) }}>Search</button>
-
-          </div>
-          {
-            isCartopen && <CartPopup />
-          }
-          <div className="flex">
-
-
-            <h2>
-              DIMENSIONS(mm)
-            </h2>
-            <div className='hr' ></div>
-
-
-
-          </div>
-          <img src={dimensions} alt="StandardImage" width={250} />
-          <div className="flex">
-
-            <h2>STANDARD SIZE</h2>
-            <div className='hr' ></div>
-          </div>
-          <p>Standard Size:</p>
-
-          <div className='p1'>
-            <select value={selectedCountry} className='country' onChange={handleCountryChange}>
-              <option value="">Select Country</option>
-              {countries.map((country) => (
-                <option key={country} value={country}>
-                  {country}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="row">
-            <AiFillCaretDown onClick={() => { setisopen(!isopen) }} />
-
-            <input type="number" className='sizeinput' placeholder='Size' min={0} onChange={(e) => { setsize(e.target.value); }} />
-            <div className='updown'>
-
-            </div>
-
-            <input type="number" className='sizeinput' placeholder='CS' min={0} onChange={(e) => { setCs(e.target.value) }} />
-            <div className='updown'>
-
-            </div>
-            <input type="number" className='sizeinput' placeholder='ID' min={0} onChange={(e) => { setid(e.target.value) }} />
-            <div className='updown'>
-
-            </div>
-
-          </div>
-          {
-            isopen ?
+            <div className='keywoedSearch'>
               <div>
-                <div style={{ width: '15vw', height: '20vh', marginTop: '2rem', border: "2px solid grey", overflowY: 'scroll' }}>
-                  <input type="checkbox" name="" id="" />10 20 30 <br />
-                  <input type="checkbox" name="" id="" />10 20 30 <br />
-                  <input type="checkbox" name="" id="" />10 20 30 <br />
-                  <input type="checkbox" name="" id="" />10 20 30 <br />
-                  <input type="checkbox" name="" id="" />10 20 30 <br />
-                  <input type="checkbox" name="" id="" />10 20 30 <br />
-                  <input type="checkbox" name="" id="" />10 20 30 <br />
-                  <input type="checkbox" name="" id="" />10 20 30 <br />
-                </div>
-              </div> : <></>
-          }
-          <div className="flex">
-            <h2>TEMPRATURE &deg; C</h2>
-            <div className='hr' ></div>
-          </div>
-          <SliderComponent />
-          <div className="flex">
-            <h2>BASE MATERIAL TYPE</h2>
-            <div className='hr' ></div>
-          </div>
-          <CheckboxList data={data} />
-          <div className="flex">
-            <h2>Sub MATERIAL TYPE</h2>
-            <div className='hr' ></div>
-          </div>
-          <CheckboxList data={data} />
-          <div className="flex">
-            <h2>Compliance</h2>
-            <div className='hr' ></div>
-          </div>
-          <CheckboxList data={data} />
-          <div className="flex">
-            <h2>Hardness</h2>
-            <div className='hr' ></div>
-          </div>
-
-          <CheckboxList data={data} />
-          <div className="flex">
-            <h2>Color</h2>
-            <div className='hr' ></div>
-          </div>
-
-          <CheckboxList data={data} />
+                <input type="text" placeholder='Search' className='searchinput' />
+              </div>
 
 
-        </div>
+              <button className='search' onClick={() => { setisCartopen(true) }}>Search</button>
+
+            </div>
+            {
+              isCartopen && <CartPopup />
+            }
+            <div className="flex">
 
 
-      }
+              <h2>
+                DIMENSIONS(mm)
+              </h2>
+              <div className='hr' ></div>
+
+
+
+            </div>
+            <img src={dimensions} alt="StandardImage" width={250} />
+            <div className="flex">
+
+              <h2>STANDARD SIZE</h2>
+              <div className='hr' ></div>
+            </div>
+            <p>Standard Size:</p>
+
+            <div className='p1'>
+              <select value={selectedCountry} className='country' onChange={handleCountryChange}>
+                <option value="">Select Country</option>
+                {countries.map((country) => (
+                  <option key={country} value={country}>
+                    {country}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="row">
+              <AiFillCaretDown onClick={() => { setisopen(!isopen) }} />
+
+              <input type="number" className='sizeinput' placeholder='Size' min={0} onChange={(e) => { setsize(e.target.value); }} />
+              <div className='updown'>
+
+              </div>
+
+              <input type="number" className='sizeinput' placeholder='CS' min={0} onChange={(e) => { setCs(e.target.value) }} />
+              <div className='updown'>
+
+              </div>
+              <input type="number" className='sizeinput' placeholder='ID' min={0} onChange={(e) => { setid(e.target.value) }} />
+              <div className='updown'>
+
+              </div>
+
+            </div>
+            {
+              isopen ?
+                <div>
+                  <div style={{ width: '15vw', height: '20vh', marginTop: '2rem', border: "2px solid grey", overflowY: 'scroll' }}>
+                    <input type="checkbox" name="" id="" />10 20 30 <br />
+                    <input type="checkbox" name="" id="" />10 20 30 <br />
+                    <input type="checkbox" name="" id="" />10 20 30 <br />
+                    <input type="checkbox" name="" id="" />10 20 30 <br />
+                    <input type="checkbox" name="" id="" />10 20 30 <br />
+                    <input type="checkbox" name="" id="" />10 20 30 <br />
+                    <input type="checkbox" name="" id="" />10 20 30 <br />
+                    <input type="checkbox" name="" id="" />10 20 30 <br />
+                  </div>
+                </div> : <></>
+            }
+            <div className="flex">
+              <h2>TEMPRATURE &deg; C</h2>
+              <div className='hr' ></div>
+            </div>
+            <SliderComponent />
+            <div className="flex">
+              <h2>BASE MATERIAL TYPE</h2>
+              <div className='hr' ></div>
+            </div>
+            <CheckboxList data={data} />
+            <div className="flex">
+              <h2>Sub MATERIAL TYPE</h2>
+              <div className='hr' ></div>
+            </div>
+            <CheckboxList data={data} />
+            <div className="flex">
+              <h2>Compliance</h2>
+              <div className='hr' ></div>
+            </div>
+            <CheckboxList data={data} />
+            <div className="flex">
+              <h2>Hardness</h2>
+              <div className='hr' ></div>
+            </div>
+
+            <CheckboxList data={data} />
+            <div className="flex">
+              <h2>Color</h2>
+              <div className='hr' ></div>
+            </div>
+
+            <CheckboxList data={data} />
+
+
+          </div>
+
+
+        }
     </div>
+
   ) : (
     <></>
   );
